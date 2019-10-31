@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import org.junit.Test;
 import org.master2.ensup.kapoor.dao.IAnnonceDao;
+import org.master2.ensup.kapoor.dao.IPersonneDao;
 import org.master2.ensup.kapoor.domaine.Annonce;
 import org.master2.ensup.kapoor.domaine.Personne;
 import org.mockito.InjectMocks;
@@ -17,11 +18,18 @@ import org.mockito.MockitoAnnotations;
  * @author benja
  *
  */
-public class TestAnnonceService {
-	@Mock IAnnonceDao dao;
+public class TestService {
+	@Mock 
+	IAnnonceDao annonceDao;
+	
+	@Mock
+	IPersonneDao personneDao;
 	
 	@InjectMocks
-	AnnonceService service;
+	AnnonceService annonceService;
+	
+	@InjectMocks
+	PersonneService personneService;
 	
 	@Test
 	public void testCreationAnnonce() {
@@ -37,15 +45,33 @@ public class TestAnnonceService {
 		
 		Personne spiedPersonne = new Personne(1, "Jean", "Pierre", "jp", "azerty", "12/03/210", array);
 		
-		Mockito.when(this.dao.creerAnnonce(spiedPersonne, spiedAnnonce));
+		Mockito.when(this.annonceDao.creerAnnonce(spiedPersonne, spiedAnnonce));
 		
-		Annonce annonce = service.getAnnonce(1);
+		Annonce annonce = annonceService.getAnnonce(1);
 		
 		assertEquals(annonce.getIdAnnonce(), 1);
 		
-		Mockito.verify(dao, Mockito.times(1));
+		//Mockito.verify(annonceDao, Mockito.times(1));
 		
 		
+	}
+	
+	@Test
+	public void testCreationPersonne() {
+		
+		Annonce spiedAnnonce = new Annonce(1, "Pomme", "Les pommes sont rouges", 4.13);
+		ArrayList<Annonce> array = new ArrayList<>();
+		array.add(spiedAnnonce);
+		
+		Personne spiedPersonne = new Personne(1, "Jean", "Pierre", "jp", "azerty", "12/03/210", array);
+		
+		Mockito.when(this.personneDao.creerPersonne(spiedPersonne));
+		
+		Personne personne = personneService.getPersonne(1);
+		
+		assertEquals(personne.getIdPersonne(), 1);
+		
+		//Mockito.verify(personneDao, Mockito.times(1));
 	}
 	
 }

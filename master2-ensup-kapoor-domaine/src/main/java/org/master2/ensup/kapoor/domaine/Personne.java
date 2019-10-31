@@ -77,5 +77,8 @@ public class Personne {
 		this.motDePasse = motDePasse;
 		this.dateNaissance = dateNaissance;
 		this.annonce = annonce;
+	}
+	public Personne() {
+		// TODO Auto-generated constructor stub
 	}	
 }

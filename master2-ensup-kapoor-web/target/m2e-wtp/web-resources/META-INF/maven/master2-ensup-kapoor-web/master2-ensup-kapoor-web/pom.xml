@@ -21,6 +21,7 @@
 		<servlet.version>3.1.0</servlet.version>
 		<servlet.api.version>2.3.1</servlet.api.version>
 		<jstl.version>1.2</jstl.version>
+		<failOnMissingWebXml>false</failOnMissingWebXml>
 	</properties>
 	
   <dependencies>
