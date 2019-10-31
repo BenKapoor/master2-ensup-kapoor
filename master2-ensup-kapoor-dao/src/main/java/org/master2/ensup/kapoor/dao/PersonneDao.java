@@ -22,6 +22,9 @@ public class PersonneDao implements IPersonneDao{
 		return 1;
 	}
 
+	/* (non-Javadoc)
+	 * @see org.master2.ensup.kapoor.dao.IPersonneDao#getPersonne(int)
+	 */
 	@Override
 	public Personne getPersonne(int idPersonne) {
 		Personne personne = new Personne();
