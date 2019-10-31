@@ -1,0 +1,87 @@
+II- projet individuel
+
+LE BONCOIN:
+ Personne 1-----------* Annonce
+ personneId             idAnnonce 
+ nom                    intitule
+ prenom                 detail
+ login                  prix
+ motDePasse
+ dateNaissance   
+ 
+ - configurer le git/github avec un projet multimodule
+ - créer la base de données avec les tables personnes et annonces
+ Metier:
+ Personne
+ Annonce
+ 
+ Idao:
+ //Crud Personne
+ public int creerPersonne(Personne personne)
+ public Personne getPersonne(int idPersonne)
+ public void deletePersonne(int idPersonne)
+ public void updatePersonne(Personne p)
+ public List<Personne> findAllPersonnes()
+ public int getPersonneId(Personne p)
+ //Crud Annonce
+ public int creerAnnonce(Personne personne, Annonce a)
+ public Annonce getAnnonce(int idAnnonce)
+ public void deleteAnnonce(int idAnnonce,Annonce a)
+ public void updateAnnonce(Personne p, Annonce a)
+ public List<Annonce> findAllAnnonce()
+ public int getAnnonceId(Annonce a)
+ 
+ Iservice:
+  //Crud Personne
+ public int creerPersonne(Personne personne)
+ public Personne getPersonne(int idPersonne)
+ public void deletePersonne(int idPersonne)
+ public void updatePersonne(Personne p)
+ public List<Personne> findAllPersonnes()
+ public int getPersonneId(Personne p)
+ //Crud Annonce
+ public int creerAnnonce(Personne personne, Annonce a)
+ public Annonce getAnnonce(int idAnnonce)
+ public void deleteAnnonce(int idAnnonce)
+ public void updateAnnonce(Annonce a)
+ public List<Annonce> findAllAnnonce()
+ public int getAnnonceId(Annonce a)
+ 
+ couche test:
+ tester les methodes creerAnnonce, crerPersonne, getAnnonce
+getPersonne de la couche service avec un mock pour la couche dao
+ 
+ couche web:
+ 0- servlets
+ => gestionPersonnes
+ => gestionAnnonces
+ 
+ 1- annonces.jsp
+ => liste toutes les annonces (sous forme de tableau)
+ idAnnonce intitule detail modifier supprimer
+ 2- detailAnnonce.jsp
+ => affichage de toutes les informations en détail d'une annonce
+ 3- modifAnnonce.jsp
+ => formulaire de modification d'une annonce
+ 4- ajoutAnnonce.jsp
+ => formulaire d'ajout d'une annonce
+ 
+ 5- personnes.jsp
+ => liste toutes les personnes (sous forme de tableau)
+ idPersonne nom prenom dateNaissance modifier supprimer
+ 6- detailPersonne.jsp
+ => affichage de toutes les informations en détail d'une personne (sauf login et mot de passe)
+ 7- modifPersonne.jsp
+ => formulaire de modification d'une personne (sauf login et mot de passe)
+ 8- ajoutPersonne.jsp
+ => formulaire d'ajout d'une personne
+ 
+avoir un menu en tete permettant d'aller d'une page à l'autre et utilisation
+ d'un template bootstrap
+ 
+ //Amelioration future
+ créer un espace personnel accessible via login/mdp ou chaque utilisateur
+ pourra gérer ses propres annonces
+ public boolean connexion(String login, String motDePasse)
+ public boolean deconnexion(String login)
+ public List<Annonce> mesAnnonces(int idPersonne)
