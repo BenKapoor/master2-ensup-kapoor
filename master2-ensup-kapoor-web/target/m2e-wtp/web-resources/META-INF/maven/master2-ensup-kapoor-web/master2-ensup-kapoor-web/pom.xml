@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>master2-ensup-kapoor</groupId>
+    <artifactId>master2-ensup-kapoor</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  
+  <groupId>master2-ensup-kapoor-web</groupId>
+  <artifactId>master2-ensup-kapoor-web</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  <name>master2-ensup-kapoor-web Maven Webapp</name>
+  
+  <url>http://maven.apache.org</url>
+  
+  <properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<servlet.version>3.1.0</servlet.version>
+		<servlet.api.version>2.3.1</servlet.api.version>
+		<jstl.version>1.2</jstl.version>
+	</properties>
+	
+  <dependencies>
+    <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>${servlet.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/javax.servlet.jsp/javax.servlet.jsp-api -->
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>javax.servlet.jsp-api</artifactId>
+			<version>${servlet.api.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>${jstl.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>master2-ensup-kapoor-service</groupId>
+		  	<artifactId>master2-ensup-kapoor-service</artifactId>
+		  	<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+  </dependencies>
+  <build>
+    <finalName>master2-ensup-kapoor-web</finalName>
+  </build>
+</project>
