@@ -86,4 +86,4 @@ avoir un menu en tete permettant d'aller d'une page à l'autre et utilisation
  public boolean deconnexion(String login)
  public List<Annonce> mesAnnonces(int idPersonne)
  
- NOTE : 12/20
+ NOTE : 13/20
